@@ -14,7 +14,7 @@ public class Main extends Application {
 	public void start(Stage stage) {
 		
 		try {
-			Parent parent = FXMLLoader.load(getClass().getResource("/graficUserInterface/View.fxml"));
+			Parent parent = FXMLLoader.load(getClass().getResource("/graficUserInterface/ViewCalculate.fxml"));
 			Scene scene = new Scene(parent);
 			stage.setScene(scene);
 			stage.show();
