@@ -1,15 +1,19 @@
 package graficUserInterface;
 
+import java.net.URL;
 import java.util.Locale;
+import java.util.ResourceBundle;
 
 import graficUserInterface.util.Alerts;
+import graficUserInterface.util.Constraints;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class ViewControlerCalculate {
+public class ViewControlerCalculate implements Initializable {
 	
 	@FXML
 	private TextField txtNumberOne;
@@ -38,6 +42,18 @@ public class ViewControlerCalculate {
 		catch (NumberFormatException e) {
 			Alerts.showAlert("Error Calculate !!", "Invalid Format !!" , e.getMessage(), AlertType.ERROR);
 		}
+		
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		Constraints.setTextFieldDouble(txtNumberOne);
+		Constraints.setTextFieldDouble(txtNumberTwo);
+		
+		Constraints.setTextFieldMaxLength(txtNumberOne, 12);
+		Constraints.setTextFieldMaxLength(txtNumberTwo, 12);
+		
 		
 	}
 
